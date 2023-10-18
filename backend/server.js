@@ -4,9 +4,12 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-//routes
+const app = express();
 
-//atrelar as rotas ao express
+//routes
+const authRouter = require("./routes/authRoutes");
+
+//atrelar as rotas ao express 
 app.use("/api/auth", authRouter);
 
 //middlewares
@@ -14,7 +17,6 @@ app.use("/api/auth", authRouter);
 //config
 const dbName = "partytime";
 const port = 3000;
-const app = express();
 
 app.use(cors());
 app.use(express.json());
